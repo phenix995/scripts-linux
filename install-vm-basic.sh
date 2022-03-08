@@ -1,4 +1,6 @@
 apt update
-apt install qemu-guest-agent qemu-utils
+apt install -y sudo
+apt install -y qemu-guest-agent qemu-utils
 systemctl start qemu-guest-agent
-apt install -y vim curl git htop bpytop wget tmux vim iptables neofetch 
+apt install -y vim curl git htop bpytop wget tmux vim neofetch sudo ufw fail2ban
+usermod -aG sudo debian
