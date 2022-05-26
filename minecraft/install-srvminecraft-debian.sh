@@ -3,7 +3,7 @@
 
 #Configure Firewall ufw
 ufw default deny
-ufw allow qq22
+ufw allow 1122
 ufw allow 11265
 ufw enable
 ufw status verbose
