@@ -1,5 +1,5 @@
 #run as root
-#source https://www.vultr.com/docs/how-to-install-a-minecraft-server-on-debian-11/
+#based on https://www.vultr.com/docs/how-to-install-a-minecraft-server-on-debian-11/
 
 
 ufw default deny

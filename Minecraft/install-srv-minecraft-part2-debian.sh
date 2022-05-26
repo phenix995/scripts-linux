@@ -1,5 +1,5 @@
 #run as debian user
-#source https://www.vultr.com/docs/how-to-install-a-minecraft-server-on-debian-11/
+#based on https://www.vultr.com/docs/how-to-install-a-minecraft-server-on-debian-11/
 
 
 #Install the Temurin 17 OpenJDK Distribution
