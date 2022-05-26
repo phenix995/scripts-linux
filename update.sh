@@ -1,3 +1,2 @@
-#update
 apt update
-apt dist-upgrade && echo "Update OK" 
+apt dist-upgrade && echo "Update OK" || echo "Update FAILED"
