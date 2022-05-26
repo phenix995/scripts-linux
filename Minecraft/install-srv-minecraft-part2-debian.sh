@@ -21,10 +21,10 @@ sudo chown mcninja:mcninja /opt/minecraft
 
 cd /opt/minecraft
 wget https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar -O minecraft_server.1.18.2.jar
-echo "eula=true" > /opt/minecraft/eula.txt
+echo "eula=true" >> /opt/minecraft/eula.txt
 
 touch /opt/minecraft/start.sh
-echo "java -Xmx1024M -Xms256M -jar minecraft_server.1.18.2.jar nogui" >> /opt/minecraft/start.sh
+echo "java -Xmx1024M -Xms256M -jar minecraft_server.1.18.2.jar nogui" >>>> /opt/minecraft/start.sh
 chmod +x /opt/minecraft/start.sh
 
 #Install Supervisor
@@ -34,15 +34,15 @@ sudo systemctl daemon-reload
 sudo systemctl start supervisor.service
 sudo systemctl enable supervisor.service
 touch /etc/supervisor/conf.d/minecraft.conf
-echo "[program:minecraft]" > /etc/supervisor/conf.d/minecraft.conf
-echo "directory=/opt/minecraft/" > /etc/supervisor/conf.d/minecraft.conf
-echo "command=/opt/minecraft/start.sh" > /etc/supervisor/conf.d/minecraft.conf
-echo "auto_start=true" > /etc/supervisor/conf.d/minecraft.conf
-echo "autorestart=true" > /etc/supervisor/conf.d/minecraft.conf
-echo "stderr_logfile=/var/log/supervisor/error_minecraft.log" > /etc/supervisor/conf.d/minecraft.conf
-echo "stderr_logfile_maxbytes=100MB" > /etc/supervisor/conf.d/minecraft.conf
-echo "stdout_logfile=/var/log/supervisor/out_minecraft.log" > /etc/supervisor/conf.d/minecraft.conf
-echo "stdout_logfile_maxbytes=100MB" > /etc/supervisor/conf.d/minecraft.conf
+echo "[program:minecraft]" >> /etc/supervisor/conf.d/minecraft.conf
+echo "directory=/opt/minecraft/" >> /etc/supervisor/conf.d/minecraft.conf
+echo "command=/opt/minecraft/start.sh" >> /etc/supervisor/conf.d/minecraft.conf
+echo "auto_start=true" >> /etc/supervisor/conf.d/minecraft.conf
+echo "autorestart=true" >> /etc/supervisor/conf.d/minecraft.conf
+echo "stderr_logfile=/var/log/supervisor/error_minecraft.log" >> /etc/supervisor/conf.d/minecraft.conf
+echo "stderr_logfile_maxbytes=100MB" >> /etc/supervisor/conf.d/minecraft.conf
+echo "stdout_logfile=/var/log/supervisor/out_minecraft.log" >> /etc/supervisor/conf.d/minecraft.conf
+echo "stdout_logfile_maxbytes=100MB" >> /etc/supervisor/conf.d/minecraft.conf
 
 sudo supervisorctl reread
 sudo supervisorctl update
