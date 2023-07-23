@@ -1,2 +1,3 @@
 apt update
-apt dist-upgrade && echo "Update OK" || echo "Update FAILED"
+apt upgrade -y && echo "Update OK" || echo "Update FAILED"
+apt dist-upgrade -y && echo "Dist-Update OK" || echo "Dist-Update FAILED"
