@@ -1,5 +1,6 @@
+#!/bin/bash
 #run as root
-apt update
+
 apt install -y sudo
 apt install -y qemu-guest-agent qemu-utils
 systemctl start qemu-guest-agent
