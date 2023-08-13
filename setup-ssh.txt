@@ -1,1 +1,3 @@
 echo "PermitRootLogin yes" > /etc/ssh/sshd_config ; reboot
+
+git clone https://github.com/phenix995/scripts-linux.git
