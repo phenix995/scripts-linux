@@ -64,3 +64,8 @@ volumes:
   mosquitto-data:" > docker-compose.yml
 
 docker compose up -d
+
+# Usage
+# Open the web interface http://your-ip-address:4000
+# Sign in with your Tesla account
+# The Grafana dashboards are available at http://your-ip-address:3000. Log in with the default user admin (initial password admin) and enter a secure password.
