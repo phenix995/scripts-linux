@@ -1,7 +1,7 @@
 #!/bin/bash
-source update-apt.sh
-
-apt install -y git tmux net-tools nala docker docker-compose-plugin qemu-guest-agent qemu-utils
+source dist-upgrade-apt.sh
+source install-lxc-basic.sh
+apt install -y docker docker-compose-plugin
 
 touch docker-compose.yml
 echo "version: "3"
