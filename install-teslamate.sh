@@ -1,7 +1,7 @@
 #!/bin/bash
-source dist-upgrade-apt.sh
 source install-lxc-basic.sh
-apt install -y docker docker-compose-plugin
+source dist-upgrade-nala.sh
+nala install -y docker docker-compose-plugin
 
 touch docker-compose.yml
 echo "version: "3"
