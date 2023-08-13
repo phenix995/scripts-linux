@@ -1,7 +1,7 @@
-apt update
-apt upgrade -y
+#!/bin/bash
+source update-apt.sh
 
-#apt install -y git tmux net-tools nala docker docker-compose-plugin qemu-guest-agent qemu-utils
+apt install -y git tmux net-tools nala docker docker-compose-plugin qemu-guest-agent qemu-utils
 
 touch docker-compose.yml
 echo "version: "3"
@@ -63,3 +63,4 @@ volumes:
   mosquitto-conf:
   mosquitto-data:" > docker-compose.yml
 
+docker compose up -d
