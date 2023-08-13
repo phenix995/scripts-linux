@@ -1,6 +1,7 @@
 #!/bin/bash
 source install-lxc-basic.sh
 source dist-upgrade-nala.sh
+source install-docker.sh
 nala install -y docker docker-compose-plugin
 
 touch docker-compose.yml
