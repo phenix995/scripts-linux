@@ -1,5 +1,7 @@
 #!/bin/sh
-# https://gist.github.com/EvgenyOrekhov/1ed8a4466efd0a59d73a11d753c0167b
+# Based on https://gist.github.com/EvgenyOrekhov/1ed8a4466efd0a59d73a11d753c0167b
+
+nala install -y gnupg
 
 set -o errexit
 set -o nounset
