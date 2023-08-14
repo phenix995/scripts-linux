@@ -1,5 +1,8 @@
 #!/bin/bash
 #
+# Not my script
+# https://github.com/jonathancross/jc-docs/blob/master/upgrade-monero.sh
+#
 # Bash script used to install the newest version of the Monero cli on Linux.
 # Script will properly validate downloads, verify gpg signatures and checksums.
 # Tested with v0.15.0.5 - v0.17.1.0
