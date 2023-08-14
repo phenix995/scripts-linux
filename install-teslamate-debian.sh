@@ -42,7 +42,7 @@ sudo locale-gen en_CA.UTF-5
 sudo localectl set-locale LANG=en_CA.UTF-5
 
 touch /etc/systemd/system/teslamate.service
-echo "[Unit]
+echo '[Unit]
 Description=TeslaMate
 After=network.target
 After=postgresql.service
@@ -74,5 +74,5 @@ ExecStart=/usr/src/teslamate/_build/prod/rel/teslamate/bin/teslamate start
 ExecStop=/usr/src/teslamate/_build/prod/rel/teslamate/bin/teslamate stop
 
 [Install]
-WantedBy=multi-user.target" > /etc/systemd/system/teslamate.service
+WantedBy=multi-user.target' > /etc/systemd/system/teslamate.service
 
