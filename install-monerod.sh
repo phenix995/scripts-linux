@@ -2,7 +2,7 @@
 # Base on https://github.com/jonathancross/jc-docs.git
 source install-lxc-basic.sh
 source dist-upgrade-nala.sh
-
+nala install -y bzip2 
 mkdir /root/bin
 
 # git clone https://github.com/jonathancross/jc-docs.git
