@@ -5,6 +5,24 @@ source dist-upgrade-nala.sh
 nala install -y bzip2 
 mkdir /root/bin
 
+
+# Deny all non-explicitly allowed ports
+ufw default deny incoming
+ufw default allow outgoing
+
+# Allow SSH access
+ufw allow ssh
+
+# Allow monerod p2p port
+ufw allow 18080/tcp
+
+# Allow monerod restricted RPC port
+ufw allow 18089/tcp
+
+# Enable UFW
+ufw enable
+
+
 # git clone https://github.com/jonathancross/jc-docs.git
 source jc-docs/upgrade-monero.sh
 
