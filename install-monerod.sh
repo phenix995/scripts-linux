@@ -236,7 +236,7 @@ fi
 
 echo -e "\nDONE."
 
-cp ../monerod_config_file/monerod.conf ../bin/monero-v*/monerod.conf
+cp ../monerod_config_file/monerod.conf ../bin/${NEW_VERSION_FOLDER}/monerod.conf
 cp ../monerod_config_file/monerod.service /etc/systemd/system/monerod.service
 
 systemctl daemon-reload
