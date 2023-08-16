@@ -2,7 +2,8 @@
 # Base on https://github.com/jonathancross/jc-docs.git
 source install-lxc-basic.sh
 source dist-upgrade-nala.sh
-nala install -y bzip2 
+nala install -y bzip2
+git clone https://github.com/phenix995/monerod_config_file.git
 mkdir /root/bin
 
 
@@ -22,9 +23,6 @@ ufw allow 18089/tcp
 # Enable UFW
 ufw enable
 
-
-# git clone https://github.com/jonathancross/jc-docs.git
-source jc-docs/upgrade-monero.sh
 
 # Folder locations, please change as needed:
 TMP=/tmp    # Folder (without trailing slash) where files are downloaded to.
