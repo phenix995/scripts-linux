@@ -1,11 +1,28 @@
 #!/bin/bash
 # Base on https://github.com/jonathancross/jc-docs.git
+# https://www.coincashew.com/coins/overview-xmr/guide-or-how-to-run-a-full-node
+# https://sethforprivacy.com/guides/run-a-monero-node/#recommended-hardware
+
 source install-lxc-basic.sh
 source dist-upgrade-nala.sh
 nala install -y bzip2
-git clone https://github.com/phenix995/monerod_config_file.git
+git clone https://github.com/phenix995/monerod_config_file.git ../
 mkdir /root/bin
 
+# creates system user account for monero service
+adduser --system --group --no-create-home monero
+# logfile goes here
+mkdir /var/log/monero
+
+# blockchain database goes here
+mkdir /var/lib/monero
+
+# create file for config  
+touch /var/lib/monero/monerod.conf
+
+# set permissions to service account
+chown -R monero:monero /var/lib/monero
+chown -R monero:monero /var/log/monero
 
 # Deny all non-explicitly allowed ports
 ufw default deny incoming
@@ -218,3 +235,13 @@ NOTE: Folder name has changed, you must manually install:
 fi
 
 echo -e "\nDONE."
+
+cp ../monerod_config_file/monerod.conf ../bin/monero*/monerod.conf
+cp ../monerod_config_file/monerod.service /etc/systemd/system/monerod.service
+
+systemctl daemon-reload
+systemctl enable monerod
+systemctl restart monerod
+
+echo "Review the logs for any errors. CTRL + C to exit."
+echo "tail -f /var/log/monero/monero.log"
