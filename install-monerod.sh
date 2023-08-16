@@ -6,7 +6,7 @@
 source install-lxc-basic.sh
 source dist-upgrade-nala.sh
 nala install -y bzip2
-git clone https://github.com/phenix995/monerod_config_file.git ../
+git clone https://github.com/phenix995/monerod_config_file.git ../monerod_config_file
 mkdir /root/bin
 
 # creates system user account for monero service
@@ -236,7 +236,7 @@ fi
 
 echo -e "\nDONE."
 
-cp ../monerod_config_file/monerod.conf ../bin/monero*/monerod.conf
+cp ../monerod_config_file/monerod.conf ../bin/monero-v*/monerod.conf
 cp ../monerod_config_file/monerod.service /etc/systemd/system/monerod.service
 
 systemctl daemon-reload
