@@ -7,3 +7,4 @@ source install-lxc-basic.sh
 source dist-upgrade-nala.sh
 
 git clone https://github.com/phenix995/install-monerod.git ../install-monerod
+source ../install-monerod/install-monerod.sh
