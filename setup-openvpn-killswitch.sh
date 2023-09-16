@@ -10,4 +10,5 @@ ufw default deny incoming
 ufw allow out on tun0 from any to any
 ufw allow in on tun0 from any to any
 ufw allow out to 45.88.190.100 port 1194 proto udp
+ufw show added
 ufw enable
